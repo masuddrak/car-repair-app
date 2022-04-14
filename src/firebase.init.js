@@ -2,12 +2,12 @@ import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey:process.env.REACT_APP_apiKey,
-  authDomain:process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket:process.env.REACT_APP_storageBucket,
-  messagingSenderId:process.env.REACT_APP_messagingSenderId,
-  appId:process.env.REACT_APP_appId
+  apiKey: "AIzaSyA2ZF8E7A7PTSdXCJ_59jALryB8MJyXLf0",
+  authDomain: "car-repair-app-b25ec.firebaseapp.com",
+  projectId: "car-repair-app-b25ec",
+  storageBucket: "car-repair-app-b25ec.appspot.com",
+  messagingSenderId: "278567054732",
+  appId: "1:278567054732:web:5176e68f6d4977d873baa9"
 };
 
 // Initialize Firebase
