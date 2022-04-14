@@ -5,7 +5,7 @@ import About from './Pages/About/About';
 import Home from './Pages/Home/Home/Home';
 import Header from './Pages/Sheard/Header/Header';
 import Footer from './Pages/Sheard/Footer/Footer';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div>
