@@ -12,6 +12,8 @@ import Services from './Pages/Home/Serevices/Services';
 import NotFunt from './Pages/NotFunt/NotFunt';
 import Login from './Pages/Login/Login/Login';
 import Registation from './Pages/Login/Registation/Registation';
+import Checkout from './Pages/ChecekOut/Checkout';
+import RequireAuth from './RequireAuth';
 
 function App() {
   return (
@@ -22,7 +24,10 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/service/:serviceID' element={<ServiceDetails></ServiceDetails>}></Route>
         <Route path='/register' element={<Registation></Registation>}></Route>
-        <Route path='/about' element={<About></About>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth><Checkout></Checkout></RequireAuth>
+        }></Route>
+        <Route path='/about' element={<RequireAuth><About></About></RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='*' element={<NotFunt></NotFunt>}></Route>
       </Routes>

@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Registation = () => {
@@ -31,7 +32,7 @@ const Registation = () => {
         naviget('/home')
     }
     return (
-        <div className='w-50 mt-5 mx-auto'>
+        <div className='w-25 mt-5 mx-auto'>
             <h2 className='text-center text-primary'> Registation Now</h2>
             <Form onSubmit={handelFormSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -47,14 +48,12 @@ const Registation = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passswordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="Register">
+                <Button  className='w-100' variant="primary" type="Register">
                     Register Now
                 </Button>
             </Form>
             <p>Alerady have accoun? <Link to='/login' onClick={loginHandel} className='text-warning'>Login Now</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
