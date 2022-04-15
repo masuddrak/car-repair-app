@@ -38,10 +38,14 @@ const Login = () => {
         const password = passswordRef.current.value
         signInWithEmailAndPassword(email, password)
     }
-    const resetPasswordHandel=async () => {
+    const resetPasswordHandel = async () => {
         const email = emailRef.current.value
-        await sendPasswordResetEmail(email);
-        toast('Sent email');
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }else{
+            toast('please type email');
+        }
     }
     const registerHandel = event => {
         naviget('/register')
@@ -63,7 +67,7 @@ const Login = () => {
             </Form>
             {erroElement}
             <p>New to Car Service? <Link to='/register' onClick={registerHandel} className='text-warning'>Register Now</Link></p>
-            <p><a to='/login' onClick={resetPasswordHandel} className='text-warning'>Forget Password?</a></p>
+            <p><a style={{'cursor':'pointer'}} onClick={resetPasswordHandel} className='text-warning'>Forget Password?</a></p>
             <SocialLogin></SocialLogin>
             <ToastContainer />
         </div>
