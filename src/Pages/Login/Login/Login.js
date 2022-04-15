@@ -21,6 +21,12 @@ const Login = () => {
     if (user) {
         naviget(from, { replace: true });
     }
+    let erroElement;
+    if(error){
+        erroElement= <div>
+            <p className='text-danger'>{error.message}</p>
+        </div>
+    }
     const handelFormSubmit = event => {
         event.preventDefault()
         const email = emailRef.current.value
@@ -45,6 +51,7 @@ const Login = () => {
                     Login Now
                 </Button>
             </Form>
+            {erroElement}
             <p>New to Car Service? <Link to='/register' onClick={registerHandel} className='text-warning'>Register Now</Link></p>
             <SocialLogin></SocialLogin>
         </div>
