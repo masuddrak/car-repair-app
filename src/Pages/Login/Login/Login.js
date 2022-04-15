@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle, } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle, } from 'react-firebase-hooks/auth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -9,7 +9,7 @@ const Login = () => {
     const passswordRef = useRef('')
     const naviget = useNavigate()
     let location = useLocation()
-    
+
 
     let from = location.state?.from?.pathname || "/";
     const [
@@ -18,12 +18,15 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
     if (user) {
         naviget(from, { replace: true });
     }
     let erroElement;
-    if(error){
-        erroElement= <div>
+    if (error) {
+        erroElement = <div>
             <p className='text-danger'>{error.message}</p>
         </div>
     }
@@ -32,6 +35,11 @@ const Login = () => {
         const email = emailRef.current.value
         const password = passswordRef.current.value
         signInWithEmailAndPassword(email, password)
+    }
+    const resetPasswordHandel=async () => {
+        const email = emailRef.current.value
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
     }
     const registerHandel = event => {
         naviget('/register')
@@ -53,6 +61,7 @@ const Login = () => {
             </Form>
             {erroElement}
             <p>New to Car Service? <Link to='/register' onClick={registerHandel} className='text-warning'>Register Now</Link></p>
+            <p><Link to='/login' onClick={resetPasswordHandel} className='text-warning'>Forget Password?</Link></p>
             <SocialLogin></SocialLogin>
         </div>
 

@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -10,25 +10,34 @@ const Registation = () => {
     const emailRef = useRef('')
     const passswordRef = useRef('')
     const nameRef = useRef('')
-    const naviget=useNavigate()
-
+    const naviget = useNavigate()
+    const [agree,setAgree]=useState(false)
+    const [displayName,setDisplayName] = useState('');
+    
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-    const handelFormSubmit = event => {
+    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+    console.log(user)
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const handelFormSubmit =async(event) => {
         event.preventDefault()
-        const name=nameRef.current.value
+        const name = nameRef.current.value
         const email = emailRef.current.value
         const password = passswordRef.current.value
-        createUserWithEmailAndPassword(email,password)
+        
+       
+          await  createUserWithEmailAndPassword(email, password)
+     
+        await updateProfile({displayName:name});
+          alert('Updated profile');
     }
-    const loginHandel=()=>{
+    const loginHandel = () => {
         naviget('/login')
     }
-    if(user){
+    if (user) {
         naviget('/home')
     }
     return (
@@ -48,7 +57,10 @@ const Registation = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passswordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Button  className='w-100' variant="primary" type="Register">
+                <Form.Group className='mb-3 ' controlId="formBasicCheckbox">
+                    <Form.Check onClick={()=>setAgree(!agree)} className={agree?"":'text-danger'} type="checkbox" label="Allow to to CheckBox" />
+                </Form.Group>
+                <Button disabled={!agree} className='w-100' variant="primary" type="Register">
                     Register Now
                 </Button>
             </Form>
