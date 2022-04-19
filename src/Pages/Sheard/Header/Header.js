@@ -15,18 +15,18 @@ const signoutHandel=()=>{
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/"><span className='fw-bold fs-2'>BD SECORTS</span></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Toggle className='toggle' aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="ms-auto headera">
-                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/payment">Payment Option</Nav.Link>
-                            <Nav.Link as={Link} to="/serviceCharge">Service Charge</Nav.Link>
-                            <Nav.Link as={Link}  to="services">Services</Nav.Link>
-                            <Nav.Link as={Link} to="about">About Us</Nav.Link>
-                            <Nav.Link as={Link} to="contact">Contact Us</Nav.Link>
+                        <Nav className="ms-auto headera text-center">
+                            <Link to="/home">Home</Link>
+                            <Link to="/payment">Payment Option</Link>
+                            <Link to="/serviceCharge">Service Charge</Link>
+                            <Link  to="services">Services</Link>
+                            <Link to="about">About Us</Link>
+                            <Link to="contact">Contact Us</Link>
                             
                             {   user?<button onClick={signoutHandel}>{user.email}</button>:
-                                <Nav.Link as={Link} to="login">Login</Nav.Link>
+                                <Link to="login">Login</Link>
                                 }
                         </Nav>
                     </Navbar.Collapse>

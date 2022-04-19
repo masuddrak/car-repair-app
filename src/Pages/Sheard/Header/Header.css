@@ -1,5 +1,7 @@
 .headera a{
     color: white;
     font-size:18px;
-    font-weight: bold;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight:100;
 }
