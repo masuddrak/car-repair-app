@@ -43,7 +43,7 @@ const Login = () => {
         if (email) {
             await sendPasswordResetEmail(email);
             toast('Sent email');
-        }else{
+        } else {
             toast('please type email');
         }
     }
@@ -67,7 +67,7 @@ const Login = () => {
             </Form>
             {erroElement}
             <p>New to Car Service? <Link to='/register' onClick={registerHandel} className='text-warning'>Register Now</Link></p>
-            <p><a style={{'cursor':'pointer'}} onClick={resetPasswordHandel} className='text-warning'>Forget Password?</a></p>
+            <p><a style={{ 'cursor': 'pointer' }} onClick={resetPasswordHandel} className='text-warning'>Forget Password?</a></p>
             <SocialLogin></SocialLogin>
             <ToastContainer />
         </div>

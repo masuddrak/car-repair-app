@@ -8,12 +8,13 @@ const Service = ({service}) => {
         naviget(`/service/${id}`)
     }
     return (
-        <div className='service col-sm-12 com-md-6 col-lg-4 g-5'>
-            <img className='w-100' src={img} alt="" />
-            <h2>{name}</h2>
-            <p>Price:{price}</p>
-            <p><small>{description}</small></p>
-            <button onClick={()=>navigetServiceDetails(id)} className='btn btn-primary'>Book:{name}</button>
+        <div onClick={()=>navigetServiceDetails(id)} className='g-5 col-sm-12 col-md-6 col-lg-4 col-xl-3'>
+            <div className="card" style={{width: "18rem"}}>
+            <img style={{height:310}} className='w-100' src={img}  alt="..."/>
+                <div className="card-body">
+                    <h5 className='text-primary'>{name}</h5>
+                </div>
+        </div>
         </div>
     );
 };
