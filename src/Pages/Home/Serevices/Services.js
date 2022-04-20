@@ -9,16 +9,17 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div id='services' className='container'>
-            <h3 className='services-titel'> Services </h3>
+        <div id='services' className='container mt-4'>
+            <h3 className='text-center text-primary text-uppercase'>Escort Service best collection</h3>
+            <hr style={{ height: 2, color: 'blue' }} className='w-50 mx-auto ' />
             <div>
                 <div className="row">
-                {
-                    services.map(service => <Service
-                        key={service.id}
-                        service={service}
-                    ></Service>)
-                }
+                    {
+                        services.map(service => <Service
+                            key={service.id}
+                            service={service}
+                        ></Service>)
+                    }
                 </div>
             </div>
         </div>

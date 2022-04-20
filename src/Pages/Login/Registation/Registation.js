@@ -41,7 +41,7 @@ const Registation = () => {
         naviget('/home')
     }
     return (
-        <div className='w-25 mt-5 mx-auto'>
+        <div className='w-50 mt-5 mx-auto'>
             <h2 className='text-center text-primary'> Registation Now</h2>
             <Form onSubmit={handelFormSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

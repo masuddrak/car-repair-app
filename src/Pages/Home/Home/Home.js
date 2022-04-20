@@ -8,12 +8,9 @@ import Services from '../Serevices/Services';
 const Home = () => {
     return (
         <div>
-            {/* <Banner></Banner> */}
             <HeaderText></HeaderText>
             <Services></Services>
             <Whyme></Whyme>
-            {/* <Experts></Experts> */}
-            
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceCharge from '../ServiceCharge/ServiceCharge';
-
+import { BeakerIcon, CheckIcon } from '@heroicons/react/solid'
 const Whyme = () => {
     return (
         <div className='container my-5'>
@@ -8,19 +8,22 @@ const Whyme = () => {
             <hr style={{ height: 2, color: 'blue' }} className='w-50 mx-auto ' />
             <div className="row mt-3">
                 <div className="col-lg-6" >
-                    <div className='shadow p-3 mb-5 bg-body rounded border"'>
+                    <div className='shadow p-3 mb-3 bg-body rounded border '>
+                        <CheckIcon style={{ width: 20, color: "green", fontWeight: "bold" }}></CheckIcon>
                         <h5>100% Secure</h5>
                         <p>All client information during escort booking process will be kept confidential and secure.</p>
                     </div>
                 </div>
                 <div className="col-lg-6" >
-                    <div className='shadow p-3 mb-5 bg-body rounded border"'>
+                    <div className='shadow p-3 mb-3 bg-body rounded border'>
+                        <CheckIcon style={{ width: 20, color: "green", fontWeight: "bold" }}></CheckIcon>
                         <h5>100% Genuine</h5>
                         <p>We have presented real and authentic profiles of our girls to serve their soulmates.</p>
                     </div>
                 </div>
                 <div className="col-lg-6" >
-                    <div className='shadow p-3 mb-5 bg-body rounded border"'>
+                    <div className='shadow p-3 mb-3 bg-body rounded border'>
+                        <CheckIcon style={{ width: 20, color: "green", fontWeight: "bold" }}></CheckIcon>
                         <h5>100% Verified</h5>
                         <p>All processes involved are thoroughly varified by our dedicated team members.</p>
                     </div>
@@ -48,7 +51,7 @@ const Whyme = () => {
                     <p className='fs-3 mb-0'>Genuine Bangladesh Escort Service Site</p>
                     <p className='text-muted'>Here at BestEscortBD.com we share real profiles of hot Dhaka based female escorts who can provide you various specialised services. You can enjoy real life girlfriend experience by hiring beautiful girls. As a client all of your information will be secure and safe because we do not share them with any third party. Previously you may heard about Dhaka regency escort service, Sheraton escort service, Pan Pacific Sonargaon escort service who have both male and female escorts. But we are specialised in girl escort service providing. These girls are solely private and will only serve you as your needs.</p>
                 </div>
-                
+
                 <div>
                     <h2>FAQ</h2>
                     <h5>Are your escorts BD independent escorts or from agency?</h5>
