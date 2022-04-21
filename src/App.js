@@ -17,6 +17,7 @@ import ServiceCharge from './Pages/ServiceCharge/ServiceCharge';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Details from './Pages/ServiceDetails/Details/Details';
 import Contact from './Pages/Contact/Contact';
+import Conditions from './Pages/Conditions/Conditions';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/serviceCharge' element={<ServiceCharge></ServiceCharge>}></Route>
         <Route path='/service/:serviceID' element={<ServiceDetails></ServiceDetails>}></Route>
         <Route path='/details' element={<Details></Details>}></Route>
+        <Route path='/condition' element={<Conditions></Conditions>}></Route>
         <Route path='/services' element={<Services></Services>}></Route>
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/register' element={<Registation></Registation>}></Route>

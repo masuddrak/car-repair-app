@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
 import Services from '../Home/Serevices/Services';
 import Details from './Details/Details';
@@ -17,6 +18,7 @@ const ServiceDetails = () => {
   
     return (
         <div className='container'>
+            
                 {
                     services.map(sevice=><Details
                         key={sevice.id}

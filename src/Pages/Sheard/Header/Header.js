@@ -16,19 +16,17 @@ const signoutHandel=()=>{
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/"><span className='fw-bold fs-2'>BD SECORTS</span></Navbar.Brand>
-                    <Navbar.Toggle className='toggle' aria-controls="responsive-navbar-nav" />
+                    <Navbar.Toggle className='toggle text-primary' aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto headera text-center">
                             <CustomLink to="/home">Home</CustomLink>
                             <CustomLink to="/payment">Payment Option</CustomLink>
                             <CustomLink to="/serviceCharge">Service Charge</CustomLink>
                             <CustomLink  to="services">Services</CustomLink>
+                            <CustomLink  to="condition">Terms & Conditions</CustomLink>
+                            
                             <CustomLink to="about">About Us</CustomLink>
                             <CustomLink to="contact">Contact Us</CustomLink>
-                            
-                            {   user?<button onClick={signoutHandel}>{user.email}</button>:
-                                <CustomLink to="login">Login</CustomLink>
-                                }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

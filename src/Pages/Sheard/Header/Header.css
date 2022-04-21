@@ -1,7 +1,11 @@
 .headera a{
     color: white;
-    font-size:18px;
+    font-size:15px;
     text-decoration: none;
     margin-left: 20px;
     font-weight:100;
+    text-transform: uppercase;
+}
+.headera a:hover{
+    color: orange;
 }

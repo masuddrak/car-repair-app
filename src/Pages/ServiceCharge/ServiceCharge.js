@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ServiceCharge = () => {
     return (
         <div className='container mt-5'>
+            <Helmet>
+                <title>Service Rate - Escort BD - Best Call Girl BD</title>
+            </Helmet>
             <div className='row'>
                 <div>
                     <h3 className='text-center text-primary text-uppercase'>Escort Service Rate</h3>

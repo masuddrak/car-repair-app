@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Service.css'
 const Service = ({service}) => {
-    const {id,name,img,description,price}=service
+    const {id,name,img}=service
     const naviget=useNavigate()
     const navigetServiceDetails=(id)=>{
         naviget(`/service/${id}`)

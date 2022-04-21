@@ -55,7 +55,8 @@ const Registation = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control ref={passswordRef} type="password" placeholder="Password" required />
+                    {/* ref={passswordRef}  */}
+                    <Form.Control type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className='mb-3 ' controlId="formBasicCheckbox">
                     <Form.Check onClick={()=>setAgree(!agree)} className={agree?"":'text-danger'} type="checkbox" label="Allow to to CheckBox" />

@@ -1,15 +1,19 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Services from '../../Home/Serevices/Services';
 
 const Details = ({ sevice}) => {
-    const { name, img, City, Country, age, Height, Weight, Type, Languages } = sevice
+    const { name, img, City,title, Country, age, Height, Weight, Type, Languages } = sevice
     return (
         <div style={{ background: "#f0f2f5" }} className='row align-items-center justify-content-center'>
+            <Helmet>
+                <title>{title}</title>
+            </Helmet>
             <div className="col-lg-6">
                 <img className='w-100' src={img} alt="" />
             </div>
             <div className="col-lg-6 mt-3">
-                <h3 className='text-primary mb-0'>{name} Information</h3>
+                <h3 className='text-primary mb-0'>{title}</h3>
                 <hr style={{ height: 1, color: 'blue' }} className='w-50' />
                 <div className=''>
                     <p className='fw-bold text-muted mb-0'>Name: <span className='text-warning'>{name}</span></p>
@@ -31,7 +35,7 @@ const Details = ({ sevice}) => {
                     <hr style={{ height: 1, color: 'blue' }} className='w-100' />
                 </div>
                 <div>
-                    <p className='text-muted'>বিডি কল গার্ল সার্ভিস <span className='text-warning'> 01721006620 </span>
+                    <p className='text-muted'>বিডি কল গার্ল সার্ভিস (রিয়াদ ভাই) <span className='text-warning'> 01721006620 </span>
                         সম্মানিত গ্রাহক বৃন্দ,
                         আমি রিয়াদ ভাই, বিডি কল গার্ল সার্ভিস এর প্রভাইডার।
                         আমাদের বিডি কল গার্ল সার্ভিস নিতে চাইলে আমাদের সাথে যোগাযোগ করুন।

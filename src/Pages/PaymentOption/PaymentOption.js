@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const PaymentOption = () => {
     return (
         <div style={{ background: "#f0f2f5" }} className='container py-5'>
+            <Helmet>
+                <title>Payment Option | IMO SEX/CAM SEX | Bangladesh Escort and BD Call Girl</title>
+            </Helmet>
             <div>
                 <h3>Payment Option</h3>
                 <p className='text-muted'>Call us for service. If you like looking at pictures of our call girl. You will be taken to our Escort House.
